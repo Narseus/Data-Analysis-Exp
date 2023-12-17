@@ -4,11 +4,11 @@ from sklearn.tree import DecisionTreeClassifier
 import time
 from sklearn.neighbors import KNeighborsClassifier
 
-# opening new csv using pandas and i had to skip header because it wasn't an integer
+# opening new csv into DataFramr using pandas and i had to skip header because it wasn't an integer
 url = "https://drive.google.com/file/d/10SbEME3_x_Avwcq5azeH6B9hmMaySweu/view?usp=drivesdk"
 raw_data = pd.read_csv(url, skiprows =[0])
 null_count = raw_data.isnull().sum()
-print('Number of Null values in columns:', null_count)
+print('Number of Null values in Full dataset:', null_count)
 
 # replacing the missing values using default interpolate method (linear); suggest u to read about other methods as well
 prossed_data = raw_data.interpolate()
