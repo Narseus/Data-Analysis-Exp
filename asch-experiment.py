@@ -5,7 +5,8 @@ import time
 from sklearn.neighbors import KNeighborsClassifier
 
 # opening new csv using pandas and i had to skip header because it wasn't an integer
-raw_data = pd.read_csv(r'https://drive.google.com/file/d/10SbEME3_x_Avwcq5azeH6B9hmMaySweu/view?usp=drivesdk', skiprows =[0])
+url = "https://drive.google.com/file/d/10SbEME3_x_Avwcq5azeH6B9hmMaySweu/view?usp=drivesdk"
+raw_data = pd.read_csv(url, skiprows =[0])
 null_count = raw_data.isnull().sum()
 print('Number of Null values in columns:', null_count)
 
